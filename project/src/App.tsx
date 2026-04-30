@@ -774,7 +774,7 @@ const searchPlaceholder=activeType==="all"?"Search catalog...":`Search ${typeTab
 return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n0,color:t.n950}}>
 <Sidebar persona={persona} setPersona={setPersona} scope={scope} setScope={setScope}/>
 <div style={{flex:1,overflow:"auto"}}>
-<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 24px",borderBottom:`1px solid ${t.n100}`}}>
+<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 24px",borderBottom:`1px solid ${t.n100}`,position:"sticky",top:0,zIndex:20,background:t.n0}}>
 <div style={{display:"flex",alignItems:"center",gap:6}}><Ic name="search" size={14} color={t.n300}/><input placeholder="Search or go to..." style={{height:32,padding:"0 12px",width:240,border:`1px solid ${t.n200}`,borderRadius:4,fontSize:"14px",fontFamily:ff,outline:"none",color:t.n950}}/></div>
 <div style={{display:"flex",alignItems:"center",gap:12}}><div style={{width:24,height:24,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}><Ic name="plus" size={16} color={t.n500}/></div><div style={{width:28,height:28,borderRadius:"50%",background:t.p100,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"13px",fontWeight:600,color:t.p700}}>S</div></div>
 </div>
