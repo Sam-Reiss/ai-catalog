@@ -771,7 +771,7 @@ return mq&&typeOk;
 const scopeLabel=scope==="Group"?"Platform Engineering / AI Catalog":scope==="Project"?"Platform Engineering / frontend-app / AI Catalog":"Explore / AI Catalog";
 const searchPlaceholder=activeType==="all"?"Search catalog...":`Search ${typeTabs.find(x=>x.k===activeType)?.l.toLowerCase()}...`;
 
-return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n50,color:t.n950}}>
+return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n0,color:t.n950}}>
 <Sidebar persona={persona} setPersona={setPersona} scope={scope} setScope={setScope}/>
 <div style={{flex:1,overflow:"auto"}}>
 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 24px",borderBottom:`1px solid ${t.n100}`,position:"sticky",top:0,zIndex:20,background:t.n0}}>
