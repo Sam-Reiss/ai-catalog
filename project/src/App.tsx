@@ -633,12 +633,14 @@ return <div>
 </div>:<h2 style={{fontSize:"16px",fontWeight:600,color:t.n950,margin:"0 0 16px"}}>Configuration</h2>}
 {(tab==="config"||persona==="Engineer")&&<>
 <div style={{border:`1px solid ${t.n100}`,borderRadius:4,marginBottom:16,overflow:"hidden"}}>
-<div style={{background:t.n50,padding:"8px 16px",borderBottom:`1px solid ${t.n100}`}}><span style={{fontSize:"14px",fontWeight:600,color:t.n950}}>Visibility & access</span></div>
+<div style={{background:t.n50,padding:"8px 16px",borderBottom:`1px solid ${t.n100}`,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}>
+<span style={{fontSize:"14px",fontWeight:600,color:t.n950}}>Visibility & access</span>
+{(persona==="Engineer"||persona==="Maintainer")&&<button onClick={()=>setVisEditOpen(true)} style={{height:24,padding:"0 8px",borderRadius:4,border:`1px solid ${t.n200}`,background:t.n0,color:t.n700,fontSize:"12px",fontFamily:ff,cursor:"pointer"}}>Edit</button>}
+</div>
 <div style={{padding:16}}>
 <div style={{marginBottom:12}}><div style={{fontSize:"14px",fontWeight:600,color:t.n950,marginBottom:2}}>Managed by</div><div style={{fontSize:"14px",color:t.n600}}>{it.au}</div></div>
 <div><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:6}}>
 <div style={{fontSize:"14px",fontWeight:600,color:t.n950}}>Visibility</div>
-{(persona==="Engineer"||persona==="Maintainer")&&<button onClick={()=>setVisEditOpen(true)} style={{height:24,padding:"0 8px",borderRadius:4,border:`1px solid ${t.n200}`,background:t.n0,color:t.n700,fontSize:"12px",fontFamily:ff,cursor:"pointer"}}>Edit</button>}
 </div>
 <VisBadge vi={currentVi}/>
 <div style={{fontSize:"13px",color:t.n500,marginTop:4}}>{currentVi==="Public"?"Anyone can view and enable.":currentVi==="Group-scoped"?"Visible within the managing group and its subgroups.":currentVi==="Org-wide"?"All groups within this instance.":"Only managing project members."}</div>
