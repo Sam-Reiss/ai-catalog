@@ -771,7 +771,7 @@ return mq&&typeOk;
 const scopeLabel=scope==="Group"?"Platform Engineering / AI Catalog":scope==="Project"?"Platform Engineering / frontend-app / AI Catalog":"Explore / AI Catalog";
 const searchPlaceholder=activeType==="all"?"Search catalog...":`Search ${typeTabs.find(x=>x.k===activeType)?.l.toLowerCase()}...`;
 
-return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n50,color:t.n950}}>
+return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n0,color:t.n950}}>
 <Sidebar persona={persona} setPersona={setPersona} scope={scope} setScope={setScope}/>
 <div style={{flex:1,overflow:"auto"}}>
 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 24px",borderBottom:`1px solid ${t.n100}`,position:"sticky",top:0,zIndex:20,background:t.n0}}>
@@ -784,7 +784,7 @@ return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n50
 {sel?<Detail it={sel} persona={persona} onBack={()=>{setSel(null)}} userReqStates={userReqStates} setUserReqStates={setUserReqStates}/>:(
 <>
 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:4}}>
-<h1 style={{margin:0,fontSize:"20px",fontWeight:600,lineHeight:"28px"}}>AI Catalog</h1>
+<h1 style={{margin:0,fontSize:"24px",fontWeight:600,lineHeight:"32px"}}>AI Catalog</h1>
 {persona==="Engineer"&&<div style={{display:"flex",gap:8}}>
 <button style={{height:32,padding:"0 12px",borderRadius:4,border:`1px solid ${t.n200}`,cursor:"pointer",background:t.n0,color:t.n700,fontWeight:500,fontSize:"14px",fontFamily:ff}}>New flow</button>
 <button style={{height:32,padding:"0 12px",borderRadius:4,border:"none",cursor:"pointer",background:t.b500,color:t.n0,fontWeight:600,fontSize:"14px",fontFamily:ff}}>New agent</button>
