@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 
-const t={n0:"#fff",n10:"#fafafa",n50:"#f0f0f0",n100:"#dbdbdb",n200:"#c4c4c4",n300:"#999",n400:"#868686",n500:"#666",n600:"#525252",n700:"#404040",n800:"#303030",n900:"#1f1f1f",n950:"#18171d",p50:"#f4f0ff",p100:"#e1d8f9",p200:"#c3b8e3",p700:"#453894",p800:"#2f2a6b",b50:"#e9f3fc",b100:"#cbe2f9",b200:"#9dc7f1",b500:"#1f75cb",b600:"#1068bf",g50:"#ecf4ee",g100:"#c3dcbb",g400:"#2da160",g500:"#108548",g600:"#217645",o50:"#fdf1dd",o100:"#f5d9a8",o400:"#c17d10",o500:"#ab6100",r50:"#fcf1ef",r500:"#dd2b0e",purple500:"#6943d0",purple600:"#5943b6"};
-const ff='-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Ubuntu,Cantarell,"Helvetica Neue",sans-serif';
+const t={n0:"#ffffff",n10:"#fbfafd",n50:"#f8f9fa",n100:"#ececef",n200:"#d1d0d3",n300:"#b2b1b6",n400:"#89888d",n500:"#6f6e77",n600:"#535158",n700:"#3b3942",n800:"#2b2830",n900:"#1f1c24",n950:"#171321",p50:"#f6f3fe",p100:"#e9ddfe",p200:"#d2b7fb",p700:"#6e49cb",p800:"#5943b6",b50:"#edf4ff",b100:"#d8e9ff",b200:"#b3d4ff",b500:"#1f75cb",b600:"#0b5cad",g50:"#edf8f0",g100:"#cae9d3",g400:"#2da160",g500:"#1f8f4a",g600:"#1a7f3f",o50:"#fff6e8",o100:"#fce7c4",o400:"#b87400",o500:"#9f6700",r50:"#feefee",r500:"#dd2b0e",purple500:"#7759c2",purple600:"#5943b6"};
+const ff='"GitLab Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 
 function Ic({name,size=16,color="currentColor"}){
 const d={
@@ -176,7 +176,7 @@ const typeTabs=[
 function TypeTabs({items,active,setActive}){
 const count=(k)=>k==="all"?items.length:items.filter(i=>i.tp===k).length;
 return <div style={{display:"flex",gap:0,borderBottom:`1px solid ${t.n100}`,marginBottom:16,overflowX:"auto"}}>
-{typeTabs.map(tb=>{const c=count(tb.k);const isAct=active===tb.k;return <button key={tb.k} onClick={()=>setActive(tb.k)} style={{padding:"8px 14px",border:"none",background:"transparent",cursor:"pointer",display:"inline-flex",alignItems:"center",gap:6,fontSize:"14px",fontWeight:isAct?600:400,color:isAct?t.n950:t.n500,fontFamily:ff,borderBottom:isAct?`2px solid ${t.b500}`:"2px solid transparent",marginBottom:-1,whiteSpace:"nowrap"}}><Ic name={tb.ic} size={14} color={isAct?t.n950:t.n500}/>{tb.l}<span style={{fontSize:"12px",color:isAct?t.n500:t.n400,fontWeight:400}}>{c}</span></button>})}
+{typeTabs.map(tb=>{const c=count(tb.k);const isAct=active===tb.k;return <button key={tb.k} onClick={()=>setActive(tb.k)} style={{padding:"8px 12px",border:"none",background:"transparent",cursor:"pointer",display:"inline-flex",alignItems:"center",gap:6,fontSize:"13px",fontWeight:isAct?600:500,color:isAct?t.n900:t.n500,fontFamily:ff,borderBottom:isAct?`2px solid ${t.b500}`:"2px solid transparent",marginBottom:-1,whiteSpace:"nowrap"}}><Ic name={tb.ic} size={14} color={isAct?t.n900:t.n500}/>{tb.l}<span style={{fontSize:"12px",color:isAct?t.n500:t.n400,fontWeight:500}}>{c}</span></button>})}
 </div>;
 }
 
@@ -184,9 +184,9 @@ function SearchBar({tq,setTq,sb,setSb,vm,setVm,placeholder}){
 return <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:12}}>
 <div style={{flex:1,position:"relative"}}>
 <div style={{position:"absolute",left:10,top:"50%",transform:"translateY(-50%)",pointerEvents:"none"}}><Ic name="search" size={14} color={t.n400}/></div>
-<input value={tq} onChange={e=>setTq(e.target.value)} placeholder={placeholder||"Search catalog..."} style={{width:"100%",height:32,padding:"0 12px 0 32px",border:`1px solid ${t.n200}`,borderRadius:4,fontSize:"14px",lineHeight:"24px",fontFamily:ff,color:t.n950,background:t.n0,outline:"none",boxSizing:"border-box"}}/>
+<input value={tq} onChange={e=>setTq(e.target.value)} placeholder={placeholder||"Search catalog..."} style={{width:"100%",height:32,padding:"0 12px 0 32px",border:`1px solid ${t.n200}`,borderRadius:6,fontSize:"13px",lineHeight:"24px",fontFamily:ff,color:t.n950,background:t.n0,outline:"none",boxSizing:"border-box"}}/>
 </div>
-<div style={{display:"flex",alignItems:"center"}}><select value={sb} onChange={e=>setSb(e.target.value)} style={{height:32,padding:"0 24px 0 8px",border:`1px solid ${t.n200}`,borderRadius:"4px 0 0 4px",fontSize:"13px",fontFamily:ff,background:t.n0,color:t.n950,cursor:"pointer",appearance:"none",WebkitAppearance:"none",backgroundImage:`url("data:image/svg+xml,%3Csvg width='8' height='5' viewBox='0 0 8 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%23666' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,backgroundRepeat:"no-repeat",backgroundPosition:"right 8px center",borderRight:"none"}}><option value="ns">Recommended</option><option value="st">Most stars</option><option value="nm">Name</option></select><button style={{height:32,width:32,border:`1px solid ${t.n200}`,borderRadius:"0 4px 4px 0",background:t.n0,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0}}><Ic name="sort-desc" size={16} color={t.n600}/></button></div>
+<div style={{display:"flex",alignItems:"center"}}><select value={sb} onChange={e=>setSb(e.target.value)} style={{height:32,padding:"0 24px 0 8px",border:`1px solid ${t.n200}`,borderRadius:"6px 0 0 6px",fontSize:"13px",fontFamily:ff,background:t.n0,color:t.n950,cursor:"pointer",appearance:"none",WebkitAppearance:"none",backgroundImage:`url("data:image/svg+xml,%3Csvg width='8' height='5' viewBox='0 0 8 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%23666' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,backgroundRepeat:"no-repeat",backgroundPosition:"right 8px center",borderRight:"none"}}><option value="ns">Recommended</option><option value="st">Most stars</option><option value="nm">Name</option></select><button style={{height:32,width:32,border:`1px solid ${t.n200}`,borderRadius:"0 6px 6px 0",background:t.n0,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0}}><Ic name="sort-desc" size={16} color={t.n600}/></button></div>
 <div style={{display:"flex"}}><button onClick={()=>setVm("list")} style={{height:32,width:32,border:`1px solid ${t.n200}`,borderRadius:"4px 0 0 4px",background:vm==="list"?t.n50:t.n0,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0,borderRight:"none"}}><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 3h12M2 6.5h12M2 10h12M2 13.5h12" stroke={vm==="list"?t.n950:t.n400} strokeWidth="1.3" strokeLinecap="round"/></svg></button><button onClick={()=>setVm("grid")} style={{height:32,width:32,border:`1px solid ${t.n200}`,borderRadius:"0 4px 4px 0",background:vm==="grid"?t.n50:t.n0,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",padding:0}}><svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1" stroke={vm==="grid"?t.n950:t.n400} strokeWidth="1.3" fill="none"/><rect x="9" y="2" width="5" height="5" rx="1" stroke={vm==="grid"?t.n950:t.n400} strokeWidth="1.3" fill="none"/><rect x="2" y="9" width="5" height="5" rx="1" stroke={vm==="grid"?t.n950:t.n400} strokeWidth="1.3" fill="none"/><rect x="9" y="9" width="5" height="5" rx="1" stroke={vm==="grid"?t.n950:t.n400} strokeWidth="1.3" fill="none"/></svg></button></div>
 </div>;
 }
@@ -194,17 +194,17 @@ return <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:12}}>
 function Row({it,onClick,last,reqState}){
 const[h,setH]=useState(false);
 const typeIcon={agent:"agent-ai",flow:"flow-ai",mcp:"link",skill:"book-open"}[it.tp];
-return <div><div onClick={()=>onClick(it)} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{padding:h?"12px 16px":"12px 0",cursor:"pointer",background:h?t.n10:"transparent",margin:h?"0 -16px":"0",transition:"background 0.1s",display:"flex",gap:12,alignItems:"flex-start"}}>
+return <div><div onClick={()=>onClick(it)} onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)} style={{padding:h?"12px 12px":"12px 0",cursor:"pointer",background:h?t.n10:"transparent",margin:h?"0 -12px":"0",transition:"background 0.1s",display:"flex",gap:12,alignItems:"flex-start",borderRadius:h?6:0}}>
 <div style={{flexShrink:0,width:28,height:28,borderRadius:4,background:t.n50,border:`1px solid ${t.n100}`,display:"flex",alignItems:"center",justifyContent:"center",marginTop:2}}><Ic name={typeIcon} size={14} color={t.n700}/></div>
 <div style={{flex:1,minWidth:0}}>
 <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:2}}>
-<span style={{fontWeight:600,fontSize:"14px",color:t.n950}}>{it.nm}</span>
+<span style={{fontWeight:600,fontSize:"15px",color:t.n950}}>{it.nm}</span>
 {it.fo&&<FBadge/>}
 {it.fk&&<span style={{display:"inline-flex",alignItems:"center",gap:3,fontSize:"11px",color:t.n400}}><Ic name="fork" size={11} color={t.n400}/>forked</span>}
 {reqState?.status==="pending"&&<span style={{display:"inline-flex",alignItems:"center",gap:3,fontSize:"11px",color:t.o500,background:t.o50,border:`1px solid ${t.o100}`,padding:"0 6px",borderRadius:4,lineHeight:"18px"}}><Ic name="clock" size={10} color={t.o500}/>Requested</span>}
 {reqState?.status==="rejected"&&<span style={{display:"inline-flex",alignItems:"center",gap:3,fontSize:"11px",color:t.r500,background:t.r50,border:`1px solid ${t.r500}33`,padding:"0 6px",borderRadius:4,lineHeight:"18px"}}>Declined</span>}
 </div>
-<div style={{fontSize:"14px",color:t.n600,lineHeight:"20px",marginBottom:4,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{it.ds}</div>
+<div style={{fontSize:"13px",color:t.n600,lineHeight:"20px",marginBottom:4,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{it.ds}</div>
 <div style={{fontSize:"13px",color:t.n400,display:"flex",alignItems:"center",gap:4,flexWrap:"wrap"}}>
 <Ic name={{"Public":"earth","Group-scoped":"group","Org-wide":"namespace","Private":"eye"}[it.vi]} size={12} color={t.n400}/><span>{it.vi}</span><span style={{margin:"0 4px"}}>·</span>
 <Ic name="namespace" size={12} color={t.n400}/><span>{it.ns} {it.tp==="skill"?"available":"namespaces"}</span><span style={{margin:"0 4px"}}>·</span>
@@ -731,7 +731,7 @@ const groupProjectNav=[{id:"manage",l:"Manage",ic:"settings"},{id:"plan",l:"Plan
 const nav=scope==="Explore"?exploreNav:groupProjectNav;
 const scopeTitle=scope==="Explore"?"Explore":scope==="Group"?"Platform Engineering":"frontend-app";
 const scopeSub=scope==="Project"?"Platform Engineering /":null;
-return <div style={{width:220,borderRight:`1px solid ${t.n100}`,background:t.n0,display:"flex",flexDirection:"column",height:"100%",flexShrink:0}}>
+return <div style={{width:232,borderRight:`1px solid ${t.n100}`,background:t.n0,display:"flex",flexDirection:"column",height:"100%",flexShrink:0}}>
 <div style={{padding:"12px 16px 4px"}}><svg width="32" height="30" viewBox="100 0 180 260" xmlns="http://www.w3.org/2000/svg"><path fill="#e24329" d="M265.26416,174.37243l-.2134-.55822-21.19899-55.30908c-.4236-1.08359-1.18542-1.99642-2.17699-2.62689-.98837-.63373-2.14749-.93253-3.32305-.87014-1.1689.06239-2.29195.48925-3.20809 1.21821-.90957.73554-1.56629 1.73047-1.87493 2.85346l-14.31327 43.80662h-57.90965l-14.31327-43.80662c-.30864-1.12299-.96536-2.11791-1.87493-2.85346-.91614-.72895-2.03911-1.15582-3.20809-1.21821-1.17548-.06239-2.33468.23641-3.32297.87014-.99166.63047-1.75348 1.5433-2.17707 2.62689l-21.19891 55.31237-.21348.55493c-6.28158 16.38521-.92929 34.90803 13.05891 45.48782.02621.01641.04922.03611.07552.05582l.18719.14119 32.29094 24.17392 15.97151 12.09024 9.71951 7.34871c2.34117 1.77316 5.57877 1.77316 7.92002 0l9.71943-7.34871 15.96822-12.09024 32.48142-24.31511c.02958-.02299.05588-.04269.08538-.06568 13.97834-10.57977 19.32735-29.09604 13.04905-45.47796Z"/><path fill="#fc6d26" d="M265.26416,174.37243l-.2134-.55822c-10.5174 2.16062-20.20405 6.6099-28.49844 12.81593-.1346.0985-25.20497 19.05805-46.55171 35.19699 15.84998 11.98517 29.6477 22.40405 29.6477 22.40405l32.48142-24.31511c.02958-.02299.05588-.04269.08538-.06568 13.97834-10.57977 19.32735-29.09604 13.04905-45.47796Z"/><path fill="#fca326" d="M160.34962,244.23117l15.97151 12.09024 9.71951 7.34871c2.34117 1.77316 5.57877 1.77316 7.92002 0l9.71943-7.34871 15.96822-12.09024s-13.79772-10.41888-29.6477-22.40405c-15.85327 11.98517-29.65099 22.40405-29.65099 22.40405Z"/><path fill="#fc6d26" d="M143.44561,186.63014c-8.29111-6.20274-17.97446-10.65531-28.49507-12.81264l-.21348.55493c-6.28158 16.38521-.92929 34.90803 13.05891 45.48782.02621.01641.04922.03611.07552.05582l.18719.14119 32.29094 24.17392s13.79772-10.41888 29.65099-22.40405c-21.34673-16.13894-46.42031-35.09848-46.55499-35.19699Z"/></svg></div>
 <div style={{padding:"8px 16px 4px"}}>
 {scopeSub&&<div style={{fontSize:"11px",color:t.n400,marginBottom:2}}>{scopeSub}</div>}
@@ -740,7 +740,7 @@ return <div style={{width:220,borderRight:`1px solid ${t.n100}`,background:t.n0,
 <span style={{fontWeight:600,fontSize:"14px",color:t.n950}}>{scopeTitle}</span>
 </div>
 </div>
-<nav style={{padding:"4px 0",flex:1}}>{nav.map(n=><div key={n.id} style={{display:"flex",alignItems:"center",gap:10,padding:"7px 16px",fontSize:"14px",background:n.a?t.b50:"transparent",color:n.a?t.b600:t.n700,fontWeight:n.a?600:400,borderLeft:n.a?`3px solid ${t.b500}`:"3px solid transparent",cursor:"pointer"}}><Ic name={n.ic} size={16} color={n.a?t.b600:t.n500}/>{n.l}</div>)}</nav>
+<nav style={{padding:"4px 8px",flex:1}}>{nav.map(n=><div key={n.id} style={{display:"flex",alignItems:"center",gap:10,padding:"7px 10px",fontSize:"13px",background:n.a?t.b50:"transparent",color:n.a?t.b600:t.n700,fontWeight:n.a?600:400,borderLeft:n.a?`2px solid ${t.b500}`:"2px solid transparent",borderRadius:6,cursor:"pointer"}}><Ic name={n.ic} size={15} color={n.a?t.b600:t.n500}/>{n.l}</div>)}</nav>
 <div style={{padding:"12px 16px",borderTop:`1px solid ${t.n100}`}}>
 <div style={{fontSize:"11px",color:t.n400,marginBottom:6,textTransform:"uppercase",letterSpacing:"0.5px",fontWeight:600}}>Scope</div>
 {["Explore","Group","Project"].map(s=><button key={s} onClick={()=>setScope(s)} style={{display:"block",width:"100%",padding:"6px 10px",marginBottom:2,border:"none",borderRadius:4,cursor:"pointer",textAlign:"left",fontSize:"13px",fontWeight:s===scope?600:400,background:s===scope?t.b50:"transparent",color:s===scope?t.b600:t.n600,fontFamily:ff}}>{s}</button>)}
@@ -771,11 +771,11 @@ return mq&&typeOk;
 const scopeLabel=scope==="Group"?"Platform Engineering / AI Catalog":scope==="Project"?"Platform Engineering / frontend-app / AI Catalog":"Explore / AI Catalog";
 const searchPlaceholder=activeType==="all"?"Search catalog...":`Search ${typeTabs.find(x=>x.k===activeType)?.l.toLowerCase()}...`;
 
-return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n0,color:t.n950}}>
+return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n50,color:t.n950}}>
 <Sidebar persona={persona} setPersona={setPersona} scope={scope} setScope={setScope}/>
 <div style={{flex:1,overflow:"auto"}}>
 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 24px",borderBottom:`1px solid ${t.n100}`,position:"sticky",top:0,zIndex:20,background:t.n0}}>
-<div style={{display:"flex",alignItems:"center",gap:6}}><Ic name="search" size={14} color={t.n300}/><input placeholder="Search or go to..." style={{height:32,padding:"0 12px",width:240,border:`1px solid ${t.n200}`,borderRadius:4,fontSize:"14px",fontFamily:ff,outline:"none",color:t.n950}}/></div>
+<div style={{display:"flex",alignItems:"center",gap:6}}><Ic name="search" size={14} color={t.n400}/><input placeholder="Search or go to..." style={{height:32,padding:"0 12px",width:240,border:`1px solid ${t.n200}`,borderRadius:6,fontSize:"13px",fontFamily:ff,outline:"none",color:t.n950,background:t.n50}}/></div>
 <div style={{display:"flex",alignItems:"center",gap:12}}><div style={{width:24,height:24,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}><Ic name="plus" size={16} color={t.n500}/></div><div style={{width:28,height:28,borderRadius:"50%",background:t.p100,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"13px",fontWeight:600,color:t.p700}}>S</div></div>
 </div>
 <div style={{maxWidth:1040,margin:"0 auto",width:"100%",boxSizing:"border-box",padding:"0 16px"}}>
