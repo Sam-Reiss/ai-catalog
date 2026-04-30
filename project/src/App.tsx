@@ -779,7 +779,7 @@ return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n0,
 <div style={{display:"flex",alignItems:"center",gap:12}}><div style={{width:24,height:24,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}><Ic name="plus" size={16} color={t.n500}/></div><div style={{width:28,height:28,borderRadius:"50%",background:t.p100,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"13px",fontWeight:600,color:t.p700}}>S</div></div>
 </div>
 <div style={{padding:"8px 24px 0",fontSize:"13px",color:t.n400}}>{scopeLabel}{sel?` / ${sel.nm}`:""}</div>
-<div style={{padding:"12px 24px 40px",maxWidth:960}}>
+<div style={{padding:"12px 24px 40px",maxWidth:960,margin:"0 auto",width:"100%",boxSizing:"border-box"}}>
 {sel?<Detail it={sel} persona={persona} onBack={()=>{setSel(null)}} userReqStates={userReqStates} setUserReqStates={setUserReqStates}/>:(
 <>
 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:4}}>
