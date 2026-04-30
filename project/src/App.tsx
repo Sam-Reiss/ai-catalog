@@ -778,8 +778,9 @@ return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n0,
 <div style={{display:"flex",alignItems:"center",gap:6}}><Ic name="search" size={14} color={t.n300}/><input placeholder="Search or go to..." style={{height:32,padding:"0 12px",width:240,border:`1px solid ${t.n200}`,borderRadius:4,fontSize:"14px",fontFamily:ff,outline:"none",color:t.n950}}/></div>
 <div style={{display:"flex",alignItems:"center",gap:12}}><div style={{width:24,height:24,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}><Ic name="plus" size={16} color={t.n500}/></div><div style={{width:28,height:28,borderRadius:"50%",background:t.p100,display:"flex",alignItems:"center",justifyContent:"center",fontSize:"13px",fontWeight:600,color:t.p700}}>S</div></div>
 </div>
-<div style={{padding:"8px 24px 0",fontSize:"13px",color:t.n400}}>{scopeLabel}{sel?` / ${sel.nm}`:""}</div>
-<div style={{padding:"12px 24px 40px",maxWidth:960,margin:"0 auto",width:"100%",boxSizing:"border-box"}}>
+<div style={{maxWidth:1040,margin:"0 auto",width:"100%",boxSizing:"border-box",padding:"0 16px"}}>
+<div style={{padding:"8px 0 0",fontSize:"13px",color:t.n400}}>{scopeLabel}{sel?` / ${sel.nm}`:""}</div>
+<div style={{padding:"12px 0 40px"}}>
 {sel?<Detail it={sel} persona={persona} onBack={()=>{setSel(null)}} userReqStates={userReqStates} setUserReqStates={setUserReqStates}/>:(
 <>
 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:4}}>
@@ -809,6 +810,7 @@ return <div style={{fontFamily:ff,display:"flex",height:"100vh",background:t.n0,
 {scope==="Group"&&groupTab==="requested"&&(persona==="Maintainer"||persona==="Engineer")&&<RequestedTab onItemClick={setSel}/>}
 </>
 )}
+</div>
 </div>
 </div>
 </div>;
